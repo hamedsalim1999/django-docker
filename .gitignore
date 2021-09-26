@@ -136,3 +136,5 @@ core/blog/migrations
 # upload path
 core/media/upload
 core/media/collectstatic
+staticfiles
+static

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'pp1!h9wr=w+i28w+jjp21rld9@!yx1gh+uhuas$#%1(ui1y1wj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TrueDEBUG = bool(os.environ.get("DEBUG", default=False))
+DEBUG = TrueDEBUG = bool(os.environ.get("DEBUG", default=True))
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,9 +126,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = "/var/www/doprax_test/static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
