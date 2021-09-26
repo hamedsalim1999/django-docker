@@ -5,5 +5,5 @@ RUN mkdir core
 COPY . /core/
 WORKDIR /core
 RUN pip install -r requirements.txt
-CMD ["gunicorn", "--bind", ":5000", "core.wsgi:application"]
+CMD ["gunicorn","core.wsgi:application" ,"--bind", ":5000"]
 
