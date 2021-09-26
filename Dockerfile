@@ -5,6 +5,7 @@ RUN mkdir core
 COPY . /core/
 WORKDIR /core
 RUN pip install -r requirements.txt
+RUN mkdir static
 RUN python manage.py collectstatic --no-input
 CMD ["gunicorn","core.wsgi:application" ,"--bind", ":5000"]
 
